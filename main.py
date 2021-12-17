@@ -65,6 +65,7 @@ def stop_and_restart():
 bot.run(main())
 bot.start()
 print("\n\nRadio Player Bot Started, Join @AsmSafone!")
+"""
 bot.send(
     functions.bots.SetBotCommands(
         commands=[
@@ -155,7 +156,7 @@ bot.send(
         ]
     )
 )
-
+"""
 @bot.on_message(filters.command(["restart", f"restart@{USERNAME}"]) & filters.user(ADMINS) & (filters.chat(CHAT_ID) | filters.private | filters.chat(LOG_GROUP)))
 async def restart(_, message: Message):
     k=await message.reply_text("🔄 **Checking ...**")
