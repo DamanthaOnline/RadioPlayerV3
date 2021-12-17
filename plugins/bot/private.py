@@ -255,7 +255,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 
 
-@Client.on_message(filters.command(["start", f"start@{USERNAME}"]))
+@Client.on_message(filters.command(["aimestart", f"aimestart@{USERNAME}"]))
 async def start(client, message):
     buttons = [
             [
@@ -279,7 +279,7 @@ async def start(client, message):
     await mp.delete(message)
 
 
-@Client.on_message(filters.command(["help", f"help@{USERNAME}"]))
+@Client.on_message(filters.command(["haimeelp", f"helaimep@{USERNAME}"]))
 async def help(client, message):
     buttons = [
             [
