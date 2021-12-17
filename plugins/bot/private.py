@@ -69,14 +69,14 @@ HELP_TEXT = """
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    if query.from_user.id not in Config.ADMINS and query.data != "help":
+    if query.from_user.id not in Config.ADMINS and query.data != "aimehelp":
         await query.answer(
             "You're Not Allowed! 🤣",
             show_alert=True
             )
         return
 
-    if query.data.lower() == "replay":
+    if query.data.lower() == "aimereplay":
         group_call = mp.group_call
         if not playlist:
             await query.answer("⛔️ Empty Playlist !", show_alert=True)
@@ -107,7 +107,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "pause":
+    elif query.data.lower() == "aimepause":
         if not playlist:
             await query.answer("⛔️ Empty Playlist !", show_alert=True)
             return
@@ -135,7 +135,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "resume":   
+    elif query.data.lower() == "aimeresume":   
         if not playlist:
             await query.answer("⛔️ Empty Playlist !", show_alert=True)
             return
@@ -163,7 +163,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "skip":   
+    elif query.data.lower() == "aimeskip":   
         if not playlist:
             await query.answer("⛔️ Empty Playlist !", show_alert=True)
             return
@@ -191,7 +191,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "help":
+    elif query.data.lower() == "aimehelp":
         buttons = [
             [
                 InlineKeyboardButton("SEARCH SONGS INLINE", switch_inline_query_current_chat=""),
@@ -218,7 +218,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "home":
+    elif query.data.lower() == "haimeome":
         buttons = [
             [
                 InlineKeyboardButton("SEARCH SONGS INLINE", switch_inline_query_current_chat=""),
@@ -244,7 +244,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "close":
+    elif query.data.lower() == "caimelose":
         try:
             await query.message.delete()
             await query.message.reply_to_message.delete()
